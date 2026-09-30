@@ -50,21 +50,11 @@ Choose an option:
 - Clean exit loop  
 - Stable behavior on modern Windows builds
 
-### Text Representation of Menu (Color‑Annotated)
+### Visual Representation of Menu
 
-```text
-[Cyan] ========================================
-[Cyan]        === Audio Hibernate Fix ===
-[Cyan] ========================================
+![AudioHibernateFix Menu Screenshot](assets/screenshot.png)
 
-[White] Select an option:
-
-[Yellow] 1) Run Simple Check
-[Yellow] 2) Run Detailed Check
-[Yellow] 3) Exit
-```
-
-> Color legend: Cyan = header, Yellow = menu options, White = neutral text.
+> Screenshot of the menu interface showing color‑coded output.
 
 ## License
 MIT License  
