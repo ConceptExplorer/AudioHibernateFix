@@ -32,10 +32,6 @@ AudioHibernateFix performs two checks:
 ## Usage
 Run the script:
 
-```
-.\AudioHibernateFix.ps1
-```
-
 Choose an option:
 
 1) Run Simple Check  
