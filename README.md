@@ -11,11 +11,11 @@ Symptoms included:
 
 AudioHibernateFix performs two checks:
 
-1. Audio Service Health Check  
+1. **Audio Service Health Check**  
    Ensures Audiosrv and AudioEndpointBuilder are running.  
    If either service is unhealthy, the tool safely restarts the audio stack.
 
-2. Power Initialization Policy Check  
+2. **Power Initialization Policy Check**  
    Detects whether the legacy SUB_DEVICE POWERLEVEL policy exists.  
    - If present → the tool corrects it  
    - If not present → the tool reports that your Windows build uses the modern full‑device reinitialization model
@@ -32,7 +32,9 @@ AudioHibernateFix performs two checks:
 ## Usage
 Run the script:
 
+```
 .\AudioHibernateFix.ps1
+```
 
 Choose an option:
 
@@ -41,7 +43,7 @@ Choose an option:
 3) Exit
 
 ## Versioning
-v1.0 — Initial release  
+**v1.0 — Initial release**
 - Menu‑driven diagnostic script  
 - Simple + detailed modes  
 - Color‑coded output  
@@ -49,6 +51,8 @@ v1.0 — Initial release
 - Stable behavior on modern Windows builds
 
 ### Text Representation of Menu (Color‑Annotated)
+
+```text
 [Cyan] ========================================
 [Cyan]        === Audio Hibernate Fix ===
 [Cyan] ========================================
@@ -58,11 +62,10 @@ v1.0 — Initial release
 [Yellow] 1) Run Simple Check
 [Yellow] 2) Run Detailed Check
 [Yellow] 3) Exit
+```
 
 > Color legend: Cyan = header, Yellow = menu options, White = neutral text.
-
 
 ## License
 MIT License  
 Copyright © 2026 ConceptExplorer
-
