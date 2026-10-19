@@ -1,56 +1,55 @@
-# AudioHibernateFix
-A lightweight diagnostic tool that checks and resolves Windows audio issues that may occur after waking from hibernate or sleep.  
+# Audio Hibernate Fix
+
+A lightweight, native C# WPF desktop utility designed to automatically fix audio device freezing and looping issues (specifically tailored for external USB sound cards like the **Sound Blaster GC7**) after Windows hibernation.  
 Designed for simplicity, clarity, and readability.
 
 ## Overview
-Some Windows builds historically exposed a fast‑resume initialization policy that could cause the audio subsystem to fail after waking from hibernate.  
-Symptoms included:
+Some Windows builds historically exposed a fast‑resume initialization policy that can cause the audio subsystem to fail after waking from hibernate.  
+Symptoms include:
 - No sound output despite devices appearing present
 - Audio services running but not properly bound
 - Audio endpoint failing to re‑initialize
 
-AudioHibernateFix performs two checks:
-
-1. **Audio Service Health Check**  
-   Ensures Audiosrv and AudioEndpointBuilder are running.  
-   If either service is unhealthy, the tool safely restarts the audio stack.
-
-2. **Power Initialization Policy Check**  
-   Detects whether the legacy SUB_DEVICE POWERLEVEL policy exists.  
-   - If present → the tool corrects it  
-   - If not present → the tool reports that your Windows build uses the modern full‑device reinitialization model
+AudioHibernateFix performs sequential recovery by gracefully stopping and restarting critical Windows audio services (`audiosrv` and `AudioEndpointBuilder`) with safe execution delays.
 
 ## Features
-- Polished menu interface with color‑coded output
-- Two diagnostic modes:
-  - Simple Check — concise health check
-  - Detailed Check — definitions, raw states, and verbose diagnostics
-- Safe, non‑destructive fixes
-- Clean exit behavior
-- GUI‑ready structure for future versions
+- Clean, native WPF desktop interface
+- Sequential service recovery with built-in timing safety to prevent driver loops
+- Automatic UAC elevation via application manifest
+- Safe, non‑destructive execution
+
+## Requirements
+- Windows 10 / 11
+- .NET 10.0 Runtime
 
 ## Usage
-Run the script:
-
-Choose an option:
-
-1) Run Simple Check  
-2) Run Detailed Check  
-3) Exit
+1. Launch **AudioHibernateFix.exe** (Administrator privileges required).
+2. Click **Run Audio Fix**.
+3. The status indicator will walk through the recovery sequence and confirm once your audio has been successfully restored.
 
 ## Versioning
-**v1.0 — Initial release**
-- Menu‑driven diagnostic script  
-- Simple + detailed modes  
-- Color‑coded output  
-- Clean exit loop  
-- Stable behavior on modern Windows builds
+**v2.x — Native WPF Release**
+- Migrated from PowerShell scripts to a standalone C# WPF desktop application
+- Native service management and execution control
+- Polished graphical interface
 
-### Visual Representation of Menu
+### Visual Representation of UI
 
-![AudioHibernateFix Menu Screenshot](assets/screenshot.png)
+![AudioHibernateFix Interface Screenshot](assets/screenshot.png)
 
-> Screenshot of the menu interface showing color‑coded output.
+> Screenshot of the native WPF audio recovery interface.
+
+## Interfaces & Evolution
+
+### Native C# WPF Application (v3.0+)
+A single-click utility that automates the complete audio recovery pipeline.
+
+![AudioHibernateFix WPF Application](assets/screenshot-app.png)
+
+### Legacy Diagnostic Script (v1.0 - v2.10)
+The original menu-driven PowerShell script used for manual diagnostics and toggles.
+
+![AudioHibernateFix PowerShell Interface](assets/screenshot-script.png)
 
 ## License
 MIT License  

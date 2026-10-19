@@ -1,0 +1,13 @@
+﻿<Window x:Class="AudioHibernateFix.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Audio Hibernate Fix" Height="250" Width="400"
+        WindowStartupLocation="CenterScreen">
+	<Grid Margin="20">
+		<StackPanel VerticalAlignment="Center">
+			<TextBlock Text="Audio Recovery Tool" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,15"/>
+			<Button x:Name="FixButton" Content="Run Audio Fix" Height="40" Click="FixButton_Click" Background="#007ACC" Foreground="White" FontWeight="Bold" Margin="0,0,0,10"/>
+			<TextBlock x:Name="StatusText" Text="Ready" HorizontalAlignment="Center" Foreground="Gray"/>
+		</StackPanel>
+	</Grid>
+</Window>
