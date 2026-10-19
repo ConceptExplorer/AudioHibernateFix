@@ -33,12 +33,6 @@ AudioHibernateFix performs sequential recovery by gracefully stopping and restar
 - Native service management and execution control
 - Polished graphical interface
 
-### Visual Representation of UI
-
-![AudioHibernateFix Interface Screenshot](assets/screenshot.png)
-
-> Screenshot of the native WPF audio recovery interface.
-
 ## Interfaces & Evolution
 
 ### Native C# WPF Application (v3.0+)
